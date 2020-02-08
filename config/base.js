@@ -1,17 +1,28 @@
-module.exports = (config, resolve) => {
-  return () => {
-    config
-      // 入口名称
-      .entry('app')
-      // 入口路径
-      .add(resolve('src/main.js'))
-      .end()
-      // 模式 "production" | "development" | "none"
-      // .mode(process.env.NODE_ENV) 等价下面
-      .set('mode', process.env.NODE_ENV)
-      // 出口
-      .output
-      .path(resolve('dist'))
-      .filename('[name].bundle.js');
-  }
-}
+// webpack基础配置
+const path = require('path');
+const Config = require('webpack-chain');
+const { findSync, resolve } = require('./utils');
+
+const config = new Config();
+
+const files = findSync('config/units');
+
+module.exports = () => {
+    const map = new Map();
+
+    files.map((_) => {
+        const name = path.basename(_, '.js');
+        return map.set(name, require(_)(config, resolve));
+    });
+
+    map.forEach((v, key) => {
+        // css 配置
+        if (key === 'css') {
+            v('css', /\.css$/);
+        } else {
+            v();
+        }
+    });
+
+    return config;
+};
