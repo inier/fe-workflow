@@ -2,7 +2,7 @@
 const chalk = require('chalk');
 const rimraf = require('rimraf');
 const ora = require('ora');
-const { resolve } = require('../utils');
+const { resolve } = require('./utils');
 const webpack = require('webpack');
 
 // 删除 dist 目录
