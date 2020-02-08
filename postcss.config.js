@@ -1,3 +1,4 @@
+// postcss 配置
 module.exports = {
   plugins: {
     'postcss-px-to-viewport': {
@@ -15,6 +16,15 @@ module.exports = {
       landscape: false,
       landscapeUnit: 'vw',
       landscapeWidth: 568
+    },
+    autoprefixer: {
+      overrideBrowserslist: [
+        '> 1%',
+        'last 3 versions',
+        'iOS >= 8',
+        'Android >= 4',
+        'Chrome >= 40'
+      ]
     }
   }
 }
