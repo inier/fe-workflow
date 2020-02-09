@@ -1,3 +1,4 @@
+// 手写loader实现可选链
 module.exports = function(content) {
   return content.replace(new RegExp(/([\$_\w\.]+\?\.)/,'g'),function(res) {
     let str  = res.replace(/\?\./,'');
@@ -8,7 +9,7 @@ module.exports = function(content) {
     }
     let compile = strArr.join('&&');
     const done = compile + '&&' + str + '.'
-    console.log(done);
+    // console.log(done);
     
     return  done;
   });
