@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{8:function(e,t,n){"use strict";n.r(t);var a=n(0),s=document.createElement("h2");s.className="test",s.innerText=new a.a("tttt").a,t.default=s}}]);
-//# sourceMappingURL=1.bundle.js.map
