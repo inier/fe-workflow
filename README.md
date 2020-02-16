@@ -1,13 +1,35 @@
-# 一步步从零开始 webpack 搭建一个大型项目
+# fe-wf
 
-> 很多人都或多或少使用过 webpack，但是很少有人能够系统的学习 webpack 配置，遇到错误的时候就会一脸懵，不知道从哪查起？性能优化时也不知道能做什么，网上的优化教程是不是符合自己的项目？等一系列问题！本文从最基础配置一步步到一个完善的大型项目的过程。让你对 webpack 再也不会畏惧，让它真正成为你的得力助手！
+fe-wf
 
-本文从下面几个课题来实现
+## 环境准备
 
-- 课题 1: [初探 webpack？探究 webpack 打包原理](./docs/课时1.md)。
-- 课题 2：[搭建开发环境跟生产环境](./docs/课时2.md)
-- 课题 3：[基础配置之loader](./docs/课时3.md)
-- 课时 4：[webpack性能优化](./docs/课时4.md)
-- 课时 5：[手写loader实现可选链](./docs/课时5.md)
-- 课时 6：[webpack编译优化](./docs/课时6.md)
-- 课时 7：[多页面配置](./docs/课时7.md)
+-   node v10+, 个人 v12+
+-   webpack 4+
+-   webpack-cli 3.3.10
+-   npm@6.13.7+ 或 yarn@1.22.0+
+
+## 特性
+
+-   使用 webpack-chain 配置
+-   插件可插拔配置,检测命令行是否带有指定标记
+    -   --report 开启打包分析报告
+    -   --gzip 开启 gzip 打包
+    -   --dll 开启 dll 打包
+-   支持 Code Splitting（代码分割）
+-   支持 Bundle Splitting（打包分割）
+-   支持 Tree Shaking（删除死代码）
+-   支持动态加载模块 import()
+-   使用 babel 解析 js，ts
+-   使用 postcss 处理 css，支持 autoprefixer
+-   支持 less、sass、postcss（pcss）文件的预处理
+
+## 命令行
+
+-   yarn dev      开发
+-   yarn debug    调试打包
+-   yarn prod     生产打包
+-   yarn dll      构建dll
+-   yarn test     测试  
+-   yarn log      生成changelog
+-   yarn cz       自定义提交
