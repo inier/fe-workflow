@@ -1,8 +1,19 @@
 /* index.css */
+body {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+}
 .test {
-  width: 200px;
-  height: 200px;
-  color: red;
-  display: flex;
-  background-color: orange;
+    display: flex;
+    width: 200px;
+    height: 200px;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    background-color: orange;
 }
