@@ -1,39 +1,47 @@
-module.exports = function (config) {
-  /**
-   * @param {object} dll 开启差分包
-   * @param {object} pages 多页面配置 通过 box run/build index 来使用
-   * @param {function} chainWebpack
-   * @param {string} entry 入口
-   * @param {string} output 出口
-   * @param {string} publicPath
-   * @param {string} port 端口
-   * @param {object} eslint eslint 配置
-   */
-  return {
-    entry: 'src/main.js',
-    output: 'dist',
-    publicPath: '/common/',
-    port: 8888,
-    eslint: {
-      lintOnSave: true, // 开启运行时检测
-      extensions: ['js', 'jsx', 'vue'] // 默认 ['js', 'jsx']
-    },
-    dll: {
-      venders: ['react']
-    },
+// 配置中心
+
+module.exports = {
+    // SPA项目的入口，多页面项目入口通过pages单独配置
+    entry: 'src/index.js',
+    // 出口
+    dist: 'dist',
+    // 公共地址，用于处理静态资源的引用问题，可以是相对路径或CDN等绝对地址
+    publicPath: '/',
+    // 需要单独打包的三方库集合
+    libs: ['react', 'react-dom', 'vue'],
     pages: {
-      index: {
-        entry: 'src/main.js',
-        template: 'public/index.html',
-        filename: 'index.html'
-      },
-      index2: {
-        entry: 'src/main.js',
-        template: 'public/index2.html',
-        filename: 'index2.html'
-      }
+        index: {
+            entry: 'src/index.js',
+            title: 'init page 1',
+            template: 'public/index.html',
+            filename: 'index.html',
+        },
+        index2: {
+            entry: 'src/index2.js',
+            template: 'public/index.html',
+            filename: 'index.html',
+        },
+        react: {
+            entry: 'src/react.js',
+            template: 'public/index.html',
+            filename: 'index.html',
+        },
+        reactTS: {
+            entry: 'src/react.tsx',
+            template: 'public/index.html',
+            filename: 'index.html',
+        },
+        vue: {
+            entry: 'src/vue.js',
+            template: 'public/index.html',
+            filename: 'index.html',
+        },
     },
-    chainWebpack(config) {
-    }
-  }
-}
+    eslint: {
+        lintOnSave: true, // 开启运行时检测
+        extensions: ['js', 'jsx', 'vue'], // 默认 ['js', 'jsx']
+    },
+    typescript: true,
+    react: true,
+    vue: true,
+};
