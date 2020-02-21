@@ -1,3 +1,4 @@
+const React = require('react')
 const ReactDOM = require('react-dom')
 
 const SSR = <div onClick={() => alert('hello')}>Hello world</div>
@@ -8,5 +9,5 @@ if (typeof document === 'undefined') {
 } else {
   console.log('在客户端渲染')
   const renderMethod = !module.hot ? ReactDOM.render : ReactDOM.hydrate
-  renderMethod(SSR, document.getElementById('app'))
+  renderMethod(SSR, document.getElementById('root'))
 }

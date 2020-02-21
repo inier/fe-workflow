@@ -49,7 +49,7 @@
    */
   "[typescript]": {
     // "editor.defaultFormatter": "esbenp.prettier-vscode"
-    "editor.defaultFormatter": "eg2.tslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -61,10 +61,10 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[vue]": {
-    "editor.defaultFormatter": "eg2.tslint"
+    "editor.defaultFormatter": "octref.vetur"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
