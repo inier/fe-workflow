@@ -1,10 +1,12 @@
-import B from '@src/ts/importTsTest.ts'
+import B from '@src/ts/importTsTest.ts';
 
-new B()
+new B();
 
 export default class A {
-  constructor() {
-    const a: string = '123'
-    console.log(a)
-  }
+    // 字段
+    public a: string;
+    // 构造函数
+    constructor(a: string) {
+        this.a = a;
+    }
 }

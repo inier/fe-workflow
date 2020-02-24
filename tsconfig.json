@@ -1,29 +1,35 @@
 {
-  "compilerOptions": {
-    "baseUrl": ".",
-    "outDir": "dist",
-    "sourceMap": false,
-    "target": "es5",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "allowJs": false,
-    "noUnusedLocals": true,
-    "strictNullChecks": false,
-    "noImplicitAny": false,
-    "noImplicitThis": true,
-    "experimentalDecorators": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": false,
-    "removeComments": false,
-    "jsx": "react",
-    "lib": ["esnext", "dom"],
-    "types": ["node"],
-    "rootDir": ".",
-    "paths": {
-      "@src/*": [
-        "src/*"
-      ]
-    }
-  },
-  "include": ["src"]
+    "compilerOptions": {
+        "baseUrl": ".",
+        "outDir": "dist",
+        "sourceMap": true,
+        "target": "es5",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "allowJs": true,
+        "noEmit": false,
+        "strict": true,
+        "pretty": true,
+        "isolatedModules": true,
+        "noUnusedLocals": true,
+        "noImplicitThis": false,
+        "noImplicitAny": false,
+        "strictNullChecks": false,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "allowSyntheticDefaultImports": true,
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "removeComments": false,
+        "jsx": "react",
+        "lib": ["esnext", "dom"],
+        "types": ["node"],
+        "rootDir": ".",
+        "paths": {
+            "@/*": ["src/*"],
+            "@src/*": ["src/*"]
+        }
+    },
+    "include": ["src"],
+    "exclude": ["node_modules", "dist"]
 }
